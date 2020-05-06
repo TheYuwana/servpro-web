@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <h1>Welcome to ServPro!</h1>
+
+    <HomeLogin v-if="view === 'Home'" />
+    <HomeRegister v-if="view === 'Register'" />
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import HomeLogin from '@/components/home/Login'
+import HomeRegister from '@/components/home/Register'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HomeLogin,
+    HomeRegister
+  },
+  data(){
+    return {
+        view: 'login'
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.view = to.name;
+    }
+  },
+  mounted(){
+    this.view = this.$route.name;
   }
 }
 </script>
+
+<style lang="scss">
+.home {
+  max-width: 960px;
+  margin: 0px auto;
+  padding-bottom: 50px;
+}
+</style>

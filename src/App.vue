@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -17,16 +13,30 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.avatar{
+  width: 75px;
+  height: 75px;
+  
+  background-repeat: no-repeat;
+  background-size: 100%;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  &-1{ background-image: url(assets/avatar_1.png); }
+  &-2{ background-image: url(assets/avatar_2.png); }
+  &-3{ background-image: url(assets/avatar_3.png); }
+  &-4{ background-image: url(assets/avatar_4.png); }
+  &-5{ background-image: url(assets/avatar_5.png); }
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+button{
+  padding: 15px 25px;
+  border-radius: 25px;
+  background: rgb(255,30,30);
+  font-size: 0.875rem;
+  color: white;
+  border: 0px;
+  &:hover{
+    opacity: 0.8;
   }
+  cursor: pointer;
 }
 </style>
