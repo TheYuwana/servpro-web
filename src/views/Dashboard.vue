@@ -72,8 +72,8 @@ export default {
   .profile{
     position: absolute;
     display: flex;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    top: 20px;
 
     p{
       margin-top: 24px;

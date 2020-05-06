@@ -10,6 +10,13 @@ var ServProApi = {
         })
     },
 
+    acceptRequest(user_id, request_id){
+        return axios.put(urlBuilder('/api/request/accept'), {
+            user_id: user_id,
+            request_id: request_id
+        })
+    },
+
     listSkills(){
         return axios({
             url: urlBuilder('/api/account/list-skills'),

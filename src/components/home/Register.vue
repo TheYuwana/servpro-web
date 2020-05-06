@@ -136,7 +136,7 @@ export default {
                             case "CANNOT_BE_EMPTY": message = `${errorObj.field} cannot be empty!`; break;
                             case "INVALID_PICTURE": message = `Please select a picture!`; break;
                             case "NAME_TAKEN": message = `The name is already taken!`; break;
-                            case "NO_SKILL_SELECTED": message = `Please select atleast one skill!`; break;
+                            case "NO_SKILL_SELECTED": message = `Please select atleast three skills!`; break;
                         }
 
                         this.errorMessages.push(message);

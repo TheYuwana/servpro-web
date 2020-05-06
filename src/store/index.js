@@ -28,8 +28,8 @@ export default new Vuex.Store({
         });
       }
     },
-    getRequests: (state) => { 
-      if(state.requests.length !== 0){
+    getRequests: (state) => (refresh) => { 
+      if(state.requests.length !== 0 && !refresh){
         return new Promise((resolve, reject) => {
           resolve(state.requests);
         }); 
@@ -50,6 +50,9 @@ export default new Vuex.Store({
   mutations: {
     setUser(state, data){
       state.user = data.user;
+    },
+    setRequests(state, data){
+      state.requests = data.requests;
     }
   }
 })
