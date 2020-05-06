@@ -92,7 +92,7 @@ export default {
         },
         statusText(request_id){
             if(request_id === this.user.id){
-                return "Mine";
+                return "Doing";
             }else{
                 return "Open";
             }
@@ -191,7 +191,7 @@ export default {
                 }
 
                 &-accepted{
-                    background-color: #0DFF3D;
+                    background-color: #88F9D4;
                     color: black;
                 }
             }

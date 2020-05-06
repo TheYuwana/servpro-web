@@ -24,9 +24,9 @@ var ServProApi = {
         })
     },
 
-    listRequests(){
+    listRequests(user_id){
         return axios({
-            url: urlBuilder('/api/request/list'),
+            url: urlBuilder(`/api/request/list?user_id=${user_id}`),
             method: 'get'
         })
     },

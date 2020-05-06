@@ -34,7 +34,7 @@ export default new Vuex.Store({
           resolve(state.requests);
         }); 
       }else{
-        return ServProApi.listRequests().then((response) => {
+        return ServProApi.listRequests(state.user.id).then((response) => {
           state.requests = response.data.data;
           return new Promise((resolve, reject) => {
             resolve(state.requests);
