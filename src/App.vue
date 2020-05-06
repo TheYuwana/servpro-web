@@ -39,4 +39,12 @@ button{
   }
   cursor: pointer;
 }
+
+.error-box{
+  width: 100%;
+  background-color: #ffe9e9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
 </style>

@@ -29,7 +29,11 @@ export default {
     }
   },
   mounted(){
-    this.view = this.$route.name;
+    if(this.$store.getters.getUser != ''){
+      this.$router.push({ name: 'Dashboard' });
+    }else{
+      this.view = this.$route.name;
+    }
   }
 }
 </script>

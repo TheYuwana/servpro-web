@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    skills: []
+    skills: [],
+    user: ''
   },
   getters: {
     getSkills: (state) => { 
@@ -26,5 +27,11 @@ export default new Vuex.Store({
         });
       }
     },
+    getUser: (state) => { return state.user; }
+  },
+  mutations: {
+    setUser(state, data){
+      state.user = data.user;
+    }
   }
 })

@@ -68,7 +68,7 @@
 
     <button v-on:click="submitRegister()">Register now!</button>
 
-    <div class="home-register-error" v-show="showError">
+    <div class="error-box" v-show="showError">
         <h3>Something went wrong!</h3>
         <p v-for="(error, index) in errorMessages" :key="index">{{ error }}</p>
     </div>
@@ -122,7 +122,7 @@ export default {
             this.user.picture = `avatar_${this.user.avatar}`;
 
             ServProApi.register(this.user, skills).then((response) => {
-                this.$router.push({ name: 'Home' })
+                this.$router.push({ name: 'Home' });
             })
             .catch((error) => {
                 if(error.response.status === 400){
@@ -256,14 +256,6 @@ export default {
                 width: 100%;
             }
         }
-    }
-
-    &-error{
-        width: 100%;
-        background-color: #ffe9e9;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 25px;
     }
 }
 

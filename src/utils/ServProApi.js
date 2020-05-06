@@ -15,14 +15,14 @@ var ServProApi = {
             url: urlBuilder('/api/account/list-skills'),
             method: 'get'
         })
-    }
+    },
 
-    // getFilter(filterId){
-    //     return axios({
-    //         url: urlBuilder(`/api/search/${filterId}`),
-    //         method: 'get'
-    //     })
-    // }
+    getUser(name){
+        return axios({
+            url: urlBuilder(`/api/account/user/${name}`),
+            method: 'get'
+        })
+    }
 }
 export default ServProApi;
 
