@@ -119,7 +119,7 @@ export default {
                 })
             }
 
-            this.user.picture = `avatar_${this.user.avatar}`;
+            this.user.picture = `avatar-${this.user.avatar}`;
 
             ServProApi.register(this.user, skills).then((response) => {
                 this.$router.push({ name: 'Home' });

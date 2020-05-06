@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    requests: [],
     skills: [],
     user: ''
   },
@@ -20,6 +21,23 @@ export default new Vuex.Store({
           state.skills = response.data.data;
           return new Promise((resolve, reject) => {
             resolve(state.skills);
+          }); 
+        })
+        .catch((error) => {
+            // Nothing to handle
+        });
+      }
+    },
+    getRequests: (state) => { 
+      if(state.requests.length !== 0){
+        return new Promise((resolve, reject) => {
+          resolve(state.requests);
+        }); 
+      }else{
+        return ServProApi.listRequests().then((response) => {
+          state.requests = response.data.data;
+          return new Promise((resolve, reject) => {
+            resolve(state.requests);
           }); 
         })
         .catch((error) => {

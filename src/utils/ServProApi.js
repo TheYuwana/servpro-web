@@ -17,6 +17,13 @@ var ServProApi = {
         })
     },
 
+    listRequests(){
+        return axios({
+            url: urlBuilder('/api/request/list'),
+            method: 'get'
+        })
+    },
+
     getUser(name){
         return axios({
             url: urlBuilder(`/api/account/user/${name}`),
